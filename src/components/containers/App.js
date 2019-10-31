@@ -1,8 +1,18 @@
-import React from 'react';
-import WbnPlayer from './WbnPlayer';
+import React from 'react'
+import WbnPlayer from './WbnPlayer'
+import { BrowserRouter, Route, Switch} from 'react-router-dom'
+import GlobalStyle from '../styles/GlobalStyle'
 
 const App = () => (
-  <WbnPlayer />
+  <BrowserRouter>
+  <>
+    <Switch>
+      <Route exact path="/" component={WbnPlayer}></Route>
+      <Route exact path="/:activeVideo" component={WbnPlayer}></Route>
+    </Switch>
+    <GlobalStyle />
+  </>
+  </BrowserRouter>
 )
 
 export default App;
